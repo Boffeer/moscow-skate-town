@@ -170,6 +170,10 @@ body {
 
 .header-address__street {
   display: block;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
 }
 
 .header-address__subway {

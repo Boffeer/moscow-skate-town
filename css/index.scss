@@ -165,6 +165,8 @@ body {
 	margin-right: 65px;
 	&__street {
 		display: block;
+		user-select: all;
+
 	}
 	&__subway {
 		display: block;

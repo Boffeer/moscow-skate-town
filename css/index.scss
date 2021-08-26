@@ -276,6 +276,32 @@ body {
 .hero-video {
 	grid-area: video;
 	position: relative;
+	&:before {
+		content: '';
+		display: block;
+		width: 237px;
+		height: 237px;
+		background-image: url(../img/decor-left.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		left: -110px;
+		bottom: -85px;
+		z-index: -1;
+	}
+	&:after {
+		content: '';
+		display: block;
+		width: 254px;
+		height: 254px;
+		background-image: url(../img/dercor-right.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		right: -95px;
+		top: -120px;
+		z-index: -1;
+	}
 }
 .hero-video-ui {
 	background: linear-gradient(180deg, #F1F1F1 0.01%, #F9F9F9 0.02%, #E9E9E9 100%);
@@ -290,6 +316,7 @@ body {
 	align-items: center;
 	padding-left: 38px;
 	padding-right: 15px;
+	z-index: 2;
 }
 .hero-video-ui-dots {
 	display: flex;
@@ -324,32 +351,29 @@ body {
 .hero-video-ui-plus {
 	margin-left: 68px;
 	position: relative;
-	width: 11px;
-	height: 11px;
+	width: 12px;
+	height: 12px;
 	&:before {
 		content: '';
 		display: block;
-		width: 100%;
+		width: 12px;
 		height: 2px;
 		background-color: #B9B9B9;
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 5px;
 	}
 	&:after {
 		content: '';
 		display: block;
 		width: 2px;
-		height: calc(100%);
+		height: 12px;
 		background-color: #B9B9B9;
 		position: absolute;
 		top: 0px;
 		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		margin-top: -1px;
+		left: 5px;
 	}
 }
 .hero-video-media {
@@ -358,6 +382,7 @@ body {
 	background-color: #000;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	z-index: 1;
 }
 .hero-video-media__preview {
 	width: 100%;
@@ -523,6 +548,11 @@ body {
 		padding-right: 15px;
 		padding-left: 15px;
 	}
+	.hero-video:before,
+	.hero-video:after {
+		background: none;
+		content: none;
+	}
 }
 
 @media (max-width: 992px) {
@@ -685,5 +715,31 @@ body {
 		br {
 			display: none;
 		}
+	}
+	.hero-video-ui {
+		padding-top: 7px;
+		padding-bottom: 7px;
+		padding-left: 20px;
+		padding-right: 56px;
+	}
+	.hero-video-ui-dots {
+		gap: 3px;
+		margin-right: 20px;
+	}
+	.hero-video-ui-dots__dot {
+		width: 15px;
+		height: 15px;
+	}
+	.hero-video-ui-plus {
+		display: none;
+	}
+	.hero-video-ui-address {
+		padding-top: 10px;
+		padding-bottom: 8px;
+	}
+	.hero-video-media__youtube,
+	.hero-video-media__preview {
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
 	}
 }
